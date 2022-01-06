@@ -71,3 +71,11 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Links
+
+* [Nest + GraphQL Quick Start](https://docs.nestjs.com/graphql/quick-start)
+* [Nest + MongoDB](https://dev.to/carlomigueldy/building-a-restful-api-with-nestjs-and-mongodb-mongoose-2165)
+* [Apollo Getting started](https://www.apollographql.com/docs/apollo-server/getting-started/)
+
+
