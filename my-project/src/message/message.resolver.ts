@@ -10,27 +10,27 @@ export class MessageResolver {
     }
 
     @Query(() => Message)
-    async all() {
+    async allMessages() {
       return await this.service.findAll();
     }
   
     @Query(() => Message)
-    async find(@Args('id') id: string) {
+    async findMessage(@Args('id') id: string) {
       return await this.service.findOne(id);
     }
   
     @Mutation(() => Message)
-    async create(createDto: Message) {
+    async createMessage(createDto: Message) {
       return await this.service.create(createDto);
     }
   
     @Mutation(() => Message)
-    async update(@Args('id') id: string, updateDto: Message) {
+    async updateMessage(@Args('id') id: string, updateDto: Message) {
       return await this.service.update(id, updateDto);
     }
   
     @Query(() => Message)
-    async delete(@Args('id') id: string) {
+    async deleteMessage(@Args('id') id: string) {
       return await this.service.delete(id);
     }
 
