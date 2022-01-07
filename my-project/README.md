@@ -72,6 +72,12 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 
+## Getting Started for Nestjs + GraphQL + MongoDB
+
+Install MongoDB with Mongo Compass to get a database UI manager. Or mongosh to get a mongo shell.
+
+
+
 ## Links
 
 * [Nest + GraphQL Quick Start](https://docs.nestjs.com/graphql/quick-start)

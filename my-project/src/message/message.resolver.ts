@@ -1,5 +1,5 @@
 import { Delete } from '@nestjs/common';
-import { Args, Int, Query, Resolver } from '@nestjs/graphql';
+import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { MessageService } from './message.service';
 import { Message } from './schemas/message.schema';
 
@@ -8,11 +8,6 @@ export class MessageResolver {
 
     constructor(private service: MessageService) {
     }
-
-    // @Query(() => String)
-    // getMessage(): string {
-    //     return '<h1>Home</h1>'
-    // }
 
     @Query(() => Message)
     async index() {
@@ -25,13 +20,13 @@ export class MessageResolver {
     }
   
     @Query(() => Message)
-    async create(createTodoDto: Message) {
-      return await this.service.create(createTodoDto);
+    async create(createDto: Message) {
+      return await this.service.create(createDto);
     }
   
     @Query(() => Message)
-    async update(@Args('id') id: string, updateTodoDto: Message) {
-      return await this.service.update(id, updateTodoDto);
+    async update(@Args('id') id: string, updateDto: Message) {
+      return await this.service.update(id, updateDto);
     }
   
     @Query(() => Message)

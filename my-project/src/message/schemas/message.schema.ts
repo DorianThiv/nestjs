@@ -1,6 +1,7 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { Type } from './type.schema';
 
 export type MessageDocument = Message & Document;
 
@@ -10,6 +11,10 @@ export class Message {
 
     @Field(() => ID)
     id: string;
+
+    @Prop({ required: true })
+    @Field(type => Type)
+    type: Type;
 
     @Prop({ required: true })
     @Field(type => String)
