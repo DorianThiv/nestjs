@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Message {
+  content: String!
+  id: ID!
+  type: Type!
+}
+
+type Mutation {
+  createMessage: Message!
+  createType: Type!
+  updateMessage(id: String!): Message!
+  updateType(id: String!): Type!
+}
+
+type Query {
+  allMessages: Message!
+  allTypes: Type!
+  deleteMessage(id: String!): Message!
+  deleteType(id: String!): Type!
+  findMessage(id: String!): Message!
+  findType(id: String!): Type!
+}
+
+type Type {
+  id: ID!
+  name: String!
+}
