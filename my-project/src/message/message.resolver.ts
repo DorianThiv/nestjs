@@ -1,7 +1,7 @@
 import { Delete } from '@nestjs/common';
 import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { MessageService } from './message.service';
-import { Message } from './schemas/message.schema';
+import { Message } from './schema/message.schema';
 
 @Resolver(of => Message)
 export class MessageResolver {
@@ -10,7 +10,7 @@ export class MessageResolver {
     }
 
     @Query(() => Message)
-    async index() {
+    async all() {
       return await this.service.findAll();
     }
   
@@ -19,12 +19,12 @@ export class MessageResolver {
       return await this.service.findOne(id);
     }
   
-    @Query(() => Message)
+    @Mutation(() => Message)
     async create(createDto: Message) {
       return await this.service.create(createDto);
     }
   
-    @Query(() => Message)
+    @Mutation(() => Message)
     async update(@Args('id') id: string, updateDto: Message) {
       return await this.service.update(id, updateDto);
     }

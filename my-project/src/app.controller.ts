@@ -6,7 +6,7 @@ export class AppController {
   constructor(private appService: AppService) {}
 
   @Get()
-  getHello(): any {
-    return this.appService.getHello();
+  home(): any {
+    return '<h1>Messages</h1>';
   }
 }

@@ -74,9 +74,14 @@ Nest is [MIT licensed](LICENSE).
 
 ## Getting Started for Nestjs + GraphQL + MongoDB
 
-Install MongoDB with Mongo Compass to get a database UI manager. Or mongosh to get a mongo shell.
+Install MongoDB and Mongo Compass ([Link](https://www.mongodb.com/try/download/community)) to get a database UI manager. Or mongosh to get a mongo shell.
 
+Install lastest version of [nodejs](https://nodejs.org/en/download/)
 
+Now you can install nestjs with your package manager [npm](https://www.npmjs.com/). Follow this link [Documentation](https://docs.nestjs.com/)\
+Nestjs is a Framework based on module architecture. To use GraphQL and MongoDB you have to download nestjs's modules.\
+With your package manager [npm](https://www.npmjs.com/) you can install [GraphQL](https://docs.nestjs.com/graphql/quick-start)\
+and [Mongoose](https://dev.to/carlomigueldy/building-a-restful-api-with-nestjs-and-mongodb-mongoose-2165) to get a MongoDB client.
 
 ## Links
 
