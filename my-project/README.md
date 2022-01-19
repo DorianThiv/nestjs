@@ -83,6 +83,13 @@ Nestjs is a Framework based on module architecture. To use GraphQL and MongoDB y
 With your package manager [npm](https://www.npmjs.com/) you can install [GraphQL](https://docs.nestjs.com/graphql/quick-start)\
 and [Mongoose](https://dev.to/carlomigueldy/building-a-restful-api-with-nestjs-and-mongodb-mongoose-2165) to get a MongoDB client.
 
+## Captures
+
+1. Create a Type : [Create type](./images/createType.png)
+2. Create a Message with the new type : [Create message](./images/createMessage.png)
+3. Show all messages : [Show messages](./images/allMessages.png)
+4. Show all types : [Show types](./images/allTypes.png)
+
 ## Links
 
 * [Nest + GraphQL Quick Start](https://docs.nestjs.com/graphql/quick-start)

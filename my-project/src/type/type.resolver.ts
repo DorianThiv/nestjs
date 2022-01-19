@@ -26,14 +26,12 @@ export class TypeResolver {
     @Mutation(() => Type)
     async createType(@Args('input') input: TypeInput) {
       const result = await this.service.create(input);
-      console.log(result);
       return result;
     }
   
     @Mutation(() => Type)
     async updateType(@Args('id') id: string, @Args('input') input: TypeInput) {
       const result = await this.service.update(id, input);
-      console.log(result);
       return result;
     }
   

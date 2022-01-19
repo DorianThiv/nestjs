@@ -19,7 +19,6 @@ export class MessageService {
     }
     
     async create(input: MessageInput): Promise<Message> {
-        console.log(input);
         return await new this.model({...input, createdAt: new Date(), updatedAt: new Date()}).save();
     }
     

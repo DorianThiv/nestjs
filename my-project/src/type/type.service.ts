@@ -3,7 +3,6 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { TypeInput } from './schema/type.input';
 import { Type, TypeDocument } from './schema/type.schema';
-import * as mongoose from 'mongoose';
 
 @Injectable()
 export class TypeService {
@@ -20,7 +19,6 @@ export class TypeService {
     }
     
     async create(input: TypeInput): Promise<Type> {
-        console.log(input);
         return await new this.model({...input, createdAt: new Date(), updatedAt: new Date()}).save();
     }
     
