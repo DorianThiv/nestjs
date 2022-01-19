@@ -1,7 +1,9 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { Type } from '../../type/schema/type.schema';
+
+import * as mongoose from 'mongoose';
+import { Type } from 'src/type/schema/type.schema';
 
 export type MessageDocument = Message & Document;
 
@@ -9,12 +11,11 @@ export type MessageDocument = Message & Document;
 @ObjectType()
 export class Message {
 
-    @Prop()
     @Field(() => ID)
-    id: string;
+    _id: string;
 
-    @Prop({ required: true })
-    @Field(type => Type)
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Type', required: true })
+    @Field(() => Type)
     type: Type;
 
     @Prop({ required: true })
@@ -32,6 +33,7 @@ export class Message {
 
     @Prop()
     deletedAt?: Date;
+
 }
 
 export const MessageSchema = SchemaFactory.createForClass(Message);

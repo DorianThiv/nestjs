@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { TypeInput } from './schema/type.input';
 import { Type, TypeDocument } from './schema/type.schema';
+import * as mongoose from 'mongoose';
 
 @Injectable()
 export class TypeService {
@@ -17,12 +19,13 @@ export class TypeService {
         return await this.model.findById(id).exec();
     }
     
-    async create(createTodoDto: Type): Promise<Type> {
-        return await new this.model({...createTodoDto, createdAt: new Date(), updatedAt: new Date()}).save();
+    async create(input: TypeInput): Promise<Type> {
+        console.log(input);
+        return await new this.model({...input, createdAt: new Date(), updatedAt: new Date()}).save();
     }
     
-    async update(id: string, updateTodoDto: Type): Promise<Type> {
-        return await this.model.findByIdAndUpdate(id, updateTodoDto, { new: true }).exec();
+    async update(id: string, input: TypeInput): Promise<Type> {
+        return await this.model.findByIdAndUpdate(id, input, { new: true }).exec();
     }
     
     async delete(id: string): Promise<Type> {

@@ -3,21 +3,26 @@
 # ------------------------------------------------------
 
 type Message {
+  _id: ID!
   content: String!
-  id: ID!
   type: Type!
 }
 
+input MessageInput {
+  content: String!
+  type: String!
+}
+
 type Mutation {
-  createMessage: Message!
-  createType: Type!
-  updateMessage(id: String!): Message!
-  updateType(id: String!): Type!
+  createMessage(input: MessageInput!): Message!
+  createType(input: TypeInput!): Type!
+  updateMessage(id: String!, input: MessageInput!): Message!
+  updateType(id: String!, input: TypeInput!): Type!
 }
 
 type Query {
-  allMessages: Message!
-  allTypes: Type!
+  allMessages: [Message!]!
+  allTypes: [Type!]!
   deleteMessage(id: String!): Message!
   deleteType(id: String!): Type!
   findMessage(id: String!): Message!
@@ -25,6 +30,11 @@ type Query {
 }
 
 type Type {
-  id: ID!
+  _id: ID!
+  messages: [Message!]!
+  name: String!
+}
+
+input TypeInput {
   name: String!
 }
