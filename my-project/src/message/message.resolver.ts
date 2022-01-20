@@ -1,6 +1,6 @@
 import { Args, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import { Type } from 'src/type/schema/type.schema';
-import { TypeService } from 'src/type/type.service';
+import { Type } from '../type/schema/type.schema';
+import { TypeService } from '../type/type.service';
 import { MessageService } from './message.service';
 import { MessageInput } from './schema/message.input';
 import { Message } from './schema/message.schema';
@@ -33,7 +33,7 @@ export class MessageResolver {
 
     @ResolveField('type', () => Type)
     async type(@Parent() message: Message) {
-      return this.typeService.findOne(message.type._id);
+      return this.typeService.findOne(String(message.type));
     }
   
     @Query(() => Message)

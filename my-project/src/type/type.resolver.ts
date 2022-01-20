@@ -1,11 +1,9 @@
 import { Args, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
+import { MessageService } from '../message/message.service';
+import { Message } from '../message/schema/message.schema';
 import { TypeInput } from './schema/type.input';
 import { Type } from './schema/type.schema';
 import { TypeService } from './type.service';
-
-import * as mongoose from 'mongoose';
-import { Message } from 'src/message/schema/message.schema';
-import { MessageService } from 'src/message/message.service';
 
 @Resolver(() => Type)
 export class TypeResolver {

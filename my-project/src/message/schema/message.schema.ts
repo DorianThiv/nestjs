@@ -1,9 +1,9 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
-
+import { Document, SchemaTypes } from 'mongoose';
 import * as mongoose from 'mongoose';
-import { Type } from 'src/type/schema/type.schema';
+import { Type } from '../../type/schema/type.schema';
+
 
 export type MessageDocument = Message & Document;
 
@@ -14,9 +14,9 @@ export class Message {
     @Field(() => ID)
     _id: string;
 
-    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Type', required: true })
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: Type.name, required: true })
     @Field(() => Type)
-    type: Type;
+    type: string;
 
     @Prop({ required: true })
     @Field(type => String)

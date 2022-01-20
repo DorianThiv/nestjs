@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { MessageService } from 'src/message/message.service';
-import { Message, MessageSchema } from 'src/message/schema/message.schema';
+import { MessageService } from '../message/message.service';
+import { Message, MessageSchema } from '../message/schema/message.schema';
 import { Type, TypeSchema } from './schema/type.schema';
 import { TypeResolver } from './type.resolver';
 import { TypeService } from './type.service';
