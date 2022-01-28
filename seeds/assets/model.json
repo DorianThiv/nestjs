@@ -1,0 +1,14 @@
+{
+    "info": {},
+    "licenses": [{
+        "license": 1,
+        "file_name": "000000552775.jpg",
+        "coco_url": "http://images.cocodataset.org/val2017/000000552775.jpg",
+        "height": 500,
+        "width": 375,
+        "date_captured": "2013-11-24 10:38:31",
+        "flickr_url": "http://farm4.staticflickr.com/3136/3106037881_9028de2168_z.jpg",
+        "id": 552775
+    }],
+    "annotations": []
+}

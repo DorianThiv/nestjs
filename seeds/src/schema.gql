@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type FileObject {
+  _id: ID!
+  chunkSize: Float!
+  contentType: String!
+  filename: String!
+  length: Float!
+  md5: String!
+  metadata: Metadata!
+  uploadDate: DateTime!
+}
+
+type Metadata {
+  filename: String!
+}
+
+type Mutation {
+  uploadFile(file: Upload!): FileObject!
+}
+
+type Picture {
+  _id: ID!
+  cocoUrl: String!
+  dateCaptured: DateTime!
+  flickrUrl: String!
+  height: Float!
+  name: String!
+  width: Float!
+}
+
+type Query {
+  allImages: [Picture!]!
+  downloadFile(id: String!): FileObject!
+  findImage(id: String!): Picture!
+  home: String!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
